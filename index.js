@@ -526,8 +526,8 @@ function _addNewChildArrangement(pool, child) {
 }
 
 
-// randomArrangementGenerator(data);  //generates 1 random arrangement
-// randomPoolGenerator(data, 3); //generates a collection of arrangements (n number of arrangements)
+randomArrangementGenerator(data);  //generates 1 random arrangement
+randomPoolGenerator(data, 3); //generates a collection of arrangements (n number of arrangements)
 
 // generateOneLifeCycle();
 //  // ***** Helper Functions inside generateOneLifeCycle *****
@@ -545,6 +545,13 @@ function _addNewChildArrangement(pool, child) {
 
 
 function generateOneLifeCycle(pool) {
+}
+
+var sample_pool = randomPoolGenerator(data, 4);
+
+generateOneLifeCycle(sample_pool);
+
+function evolve(pool) {
   var hash = _calculatePoolFitnessScore(pool);
   // console.log('* hash ->', hash);
   var lowest = _findLowestArrangement(hash);
@@ -557,10 +564,9 @@ function generateOneLifeCycle(pool) {
   // console.log('* child.length ->', child.length);
   _addNewChildArrangement(pool,child);
   // console.log('** pool inside generateOneLifeCycle ->', pool);
-  return pool;
+  if(???){
+      return pool;
+  } else {
+      return evolve(pool)
+  }
 }
-
-var sample_pool = randomPoolGenerator(data, 4);
-
-generateOneLifeCycle(sample_pool);
-
